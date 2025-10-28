@@ -1,0 +1,1 @@
+cd ~/octomap_ws
