@@ -1,0 +1,41 @@
+[0.011s] Invoking command in '/home/henrique/octomap_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/henrique/octomap_ws/build/my_robot_description -- -j12 -l12
+[0.052s] Invoked command in '/home/henrique/octomap_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/henrique/octomap_ws/build/my_robot_description -- -j12 -l12
+[0.090s] Invoking command in '/home/henrique/octomap_ws/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/henrique/octomap_ws/build/my_robot_description
+[0.101s] -- Install configuration: ""
+[0.101s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/urdf
+[0.101s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch
+[0.101s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/components
+[0.101s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/components/robot_description.launch.py
+[0.101s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/components/control.launch.py
+[0.102s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/components/visualization.launch.py
+[0.102s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/modes
+[0.102s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/modes/simulation.launch.py
+[0.102s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/modes/teleop.launch.py
+[0.102s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/modes/basic.launch.py
+[0.102s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/octomap_mapping.launch.xml
+[0.102s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/launch/main.launch.py
+[0.102s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/rviz
+[0.102s] -- Installing: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/rviz/urdf_config.rviz
+[0.103s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/config
+[0.103s] -- Installing: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/config/gz_bridge.yaml
+[0.103s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/config/params
+[0.103s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/config/params/robot_config.yaml
+[0.103s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/worlds
+[0.103s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/worlds/diff_drive
+[0.103s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/worlds/diff_drive/diff_drive.sdf
+[0.103s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/ament_index/resource_index/package_run_dependencies/my_robot_description
+[0.103s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/ament_index/resource_index/parent_prefix_path/my_robot_description
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/environment/ament_prefix_path.sh
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/environment/ament_prefix_path.dsv
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/environment/path.sh
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/environment/path.dsv
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/local_setup.bash
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/local_setup.sh
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/local_setup.zsh
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/local_setup.dsv
+[0.104s] -- Installing: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/package.dsv
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/ament_index/resource_index/packages/my_robot_description
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/cmake/my_robot_descriptionConfig.cmake
+[0.104s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/cmake/my_robot_descriptionConfig-version.cmake
+[0.105s] -- Up-to-date: /home/henrique/octomap_ws/install/my_robot_description/share/my_robot_description/package.xml
+[0.106s] Invoked command in '/home/henrique/octomap_ws/build/my_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/henrique/octomap_ws/build/my_robot_description

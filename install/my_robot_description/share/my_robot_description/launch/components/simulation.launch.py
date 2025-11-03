@@ -109,8 +109,7 @@ def generate_launch_description():
     bridge_lidar = Node(
         package="ros_gz_bridge",
         executable="parameter_bridge",
-        arguments=["/lidar/points@sensor_msgs/msg/PointCloud2[gz.msgs.PointCloudPacked"],
-        output="screen"
+        arguments=["/lidar/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked"]
     )
 
 
@@ -128,5 +127,5 @@ def generate_launch_description():
         gazebo_headless_process,
         spawn_entity,
         ros_gz_bridge,
-        bridge_lidar                                
+        bridge_lidar                             
     ])

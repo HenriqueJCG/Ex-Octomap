@@ -12,7 +12,6 @@
   gz_type_name: "gz.msgs.PointCloudPacked"
   direction: GZ_TO_ROS
 
-
 # Odometry from DiffDrive system
 - ros_topic_name: "odom"
   gz_topic_name: "world/default/model/simple_robot/odometry"

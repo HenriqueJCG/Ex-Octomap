@@ -251,56 +251,44 @@
       <child_frame_id>base_link</child_frame_id>
     </plugin>
 
-    <plugin filename="libgz-sim-gpu-lidar-system.so" 
-          name="gz::sim::systems::GpuLidar"/>
-      <topic>lidar/points</topic>
-      <frame_id>lidar_link</frame_id>
-      <horizontal_samples>720</horizontal_samples>
-      <horizontal_resolution>1</horizontal_resolution>
-      <horizontal_min_angle>-3.14159</horizontal_min_angle>  <!-- 360 degrees -->
-      <horizontal_max_angle>3.14159</horizontal_max_angle>
-      <vertical_samples>16</vertical_samples>
-      <vertical_resolution>1</vertical_resolution>
-      <vertical_min_angle>-0.261799</vertical_min_angle>  <!-- ~-15 degrees -->
-      <vertical_max_angle>0.261799</vertical_max_angle>   <!-- ~+15 degrees -->
-      <range_min>0.1</range_min>
-      <range_max>30.0</range_max>
-      <range_resolution>0.01</range_resolution>
-
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine> 
     </plugin>
-
-
   </gazebo>
 
   <!-- TODO: Add Lidar sensor -->
 
-  <gazebo reference="lidar_link">
-    <sensor name="lidar_sensor" type="lidar">
-      <update_rate>10.0</update_rate>
-      <pose>0 0 0 0 0 0</pose>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>720</samples>
-            <resolution>1</resolution>
-            <min_angle>-3.14159</min_angle>  <!-- 360 degrees -->
-            <max_angle>3.14159</max_angle>
-          </horizontal>
-          <vertical>
-            <samples>16</samples>
-            <resolution>1</resolution>
-            <min_angle>-0.261799</min_angle>  <!-- ~-15 degrees -->
-            <max_angle>0.261799</max_angle>   <!-- ~+15 degrees -->
-          </vertical>
-        </scan>
-        <range>
-          <min>0.1</min>
-          <max>30.0</max>
-          <resolution>0.01</resolution>
-        </range>
-      </ray>
-    </sensor>
-  </gazebo>
+ <gazebo reference="lidar_link">
+  <sensor name="lidar_sensor" type="lidar">
+    <pose relative_to='lidar_link'>0 0 0 0 0 0</pose>
 
+    <topic>lidar/points</topic>
+
+    <update_rate>10.0</update_rate>
+
+    <lidar>
+      <scan>
+        <horizontal>
+          <samples>720</samples>
+          <resolution>1</resolution>
+          <min_angle>-3.14159</min_angle>  <!-- 360° -->
+          <max_angle>3.14159</max_angle>
+        </horizontal>
+        <vertical>
+          <samples>16</samples>
+          <min_angle>-0.261799</min_angle>  <!-- -15° -->
+          <max_angle>0.261799</max_angle>   <!-- +15° -->
+        </vertical>
+      </scan>
+      <range>
+        <min>0.05</min>
+        <max>30.0</max>
+        <resolution>0.01</resolution>
+      </range>
+    </lidar>
+  </sensor>
+</gazebo>
 
 </robot>

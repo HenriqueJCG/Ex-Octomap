@@ -334,6 +334,9 @@ my_robot_description_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 my_robot_description_SOURCE_DIR:STATIC=/home/henrique/octomap_ws/src/my_robot_description
 
+//The directory containing a CMake configuration file for octomap.
+octomap_DIR:PATH=/opt/ros/jazzy/share/octomap
+
 //Path to a program.
 xmllint_BIN:FILEPATH=/usr/bin/xmllint
 
