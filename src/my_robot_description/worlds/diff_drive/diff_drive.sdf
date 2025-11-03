@@ -17,11 +17,6 @@
             name="gz::sim::systems::SceneBroadcaster">
     </plugin>
 
-    <plugin
-      filename="libgz-sim-sensors-system.so"
-      name="gz::sim::systems::Sensors">
-    </plugin>
-
     <!-- Add a gray ground plane -->
     <model name="ground_plane">
       <static>true</static>
