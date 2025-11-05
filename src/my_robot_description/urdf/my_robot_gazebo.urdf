@@ -155,7 +155,8 @@
 
   <!-- TODO: Create 3D Lidar link -->
 
-  <link name="lidar_link"> <visual> <geometry> <cylinder radius="0.05" length="0.02"/> </geometry> <material name="grey"> <color rgba="0.5 0.5 0.5 1"/> </material> </visual> <collision> <geometry> <cylinder radius="0.05" length="0.02"/> </geometry> </collision> <inertial> <mass value="0.1"/> <origin xyz="0 0 0" rpy="0 0 0"/> <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/> </inertial> </link> <joint name="lidar_joint" type="fixed"> <parent link="base_link"/> <child link="lidar_link"/> <!-- Position the LiDAR on top of the robot --> <origin xyz="0 0 0.15" rpy="0 0 0"/> </joint>
+  <link name="lidar_link"> 
+  <visual> <geometry> <cylinder radius="0.05" length="0.02"/> </geometry> <material name="grey"> <color rgba="0.5 0.5 0.5 1"/> </material> </visual> <collision> <geometry> <cylinder radius="0.05" length="0.02"/> </geometry> </collision> <inertial> <mass value="0.1"/> <origin xyz="0 0 0" rpy="0 0 0"/> <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/> </inertial> </link> <joint name="lidar_joint" type="fixed"> <parent link="base_link"/> <child link="lidar_link"/> <!-- Position the LiDAR on top of the robot --> <origin xyz="0 0 0.15" rpy="0 0 0"/> </joint>
 
 
 
@@ -225,43 +226,40 @@
       <frame_id>odom</frame_id>
       <child_frame_id>base_link</child_frame_id>
     </plugin>
-
-    <plugin
-      filename="gz-sim-sensors-system"
-      name="gz::sim::systems::Sensors">
-      <render_engine>ogre2</render_engine>
-    </plugin>
   </gazebo>
 
   <!-- TODO: Add Lidar sensor -->
 
   <gazebo reference="lidar_link"> 
-  <sensor name="lidar" type="lidar"> 
-  <topic>lidar/points</topic> 
-  <update_rate>10.0</update_rate> 
-  <pose>0 0 0 0 0 0</pose> 
-    <ray> 
-      <scan> 
-        <horizontal> 
-          <samples>640</samples> 
-          <resolution>1</resolution> 
-          <min_angle>-3.14159</min_angle> <!-- 360 degrees --> 
-          <max_angle>3.14159</max_angle> 
-        </horizontal> 
-        <vertical> 
-        <samples>16</samples> 
-        <resolution>1</resolution> 
-        <min_angle>-0.261799</min_angle> <!-- ~-15 degrees --> 
-        <max_angle>0.261799</max_angle> <!-- ~+15 degrees --> 
-        </vertical> 
+    <sensor name="gpu_lidar" type="gpu_lidar"> 
+    <topic>lidar</topic> 
+    <visualize>true</visualize>
+    <always_on>1</always_on>
+    <update_rate>10.0</update_rate> 
+    <pose>0 0 0 0 0 0</pose> 
+      <lidar> 
+        <scan> 
+          <horizontal> 
+            <samples>640</samples> 
+            <resolution>1</resolution> 
+            <min_angle>-3.14159</min_angle> <!-- 360 degrees --> 
+            <max_angle>3.14159</max_angle> 
+          </horizontal> 
+          <vertical> 
+            <samples>16</samples> 
+            <resolution>1</resolution> 
+            <min_angle>0.017444</min_angle> <!-- ~-15 degrees --> 
+            <max_angle>0.261799</max_angle> <!-- ~+15 degrees --> 
+          </vertical> 
         </scan> 
         <range> 
-        <min>0.1</min> 
-        <max>30.0</max> 
-        <resolution>0.01</resolution> 
-        </range> </ray> 
-        </sensor> 
-    </gazebo>
+          <min>0.1</min> 
+          <max>30.0</max> 
+          <resolution>0.01</resolution> 
+        </range> 
+      </lidar> 
+    </sensor> 
+  </gazebo>
 
 
 

@@ -8,11 +8,9 @@ Panels:
         - /Status1
         - /RobotModel1
         - /RobotModel1/Description Topic1
-        - /Right Camera1
-        - /Right Camera1/Topic1
-        - /Left Camera1
+        - /MarkerArray1
       Splitter Ratio: 0.5
-    Tree Height: 473
+    Tree Height: 655
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -30,7 +28,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: PointCloud2
 Visualization Manager:
   Class: ""
   Displays:
@@ -80,29 +78,16 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        left_camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        left_camera_link_optical:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         left_wheel:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_camera_link:
+        lidar_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        right_camera_link_optical:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         right_wheel:
           Alpha: 1
           Show Axes: false
@@ -121,48 +106,55 @@ Visualization Manager:
       Update Interval: 0
       Value: true
       Visual Enabled: true
-    - Class: rviz_default_plugins/Camera
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
       Enabled: true
-      Far Plane Distance: 100
-      Image Rendering: background and overlay
-      Name: Right Camera
-      Overlay Alpha: 0.5
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 0
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.10000000149011612
+      Style: Points
       Topic:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /right_camera/image_raw
+        Value: /lidar/points
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
-      Visibility:
-        Grid: true
-        Left Camera: true
-        RobotModel: true
-        Value: false
-      Zoom Factor: 1
-    - Class: rviz_default_plugins/Camera
+    - Class: rviz_default_plugins/MarkerArray
       Enabled: true
-      Far Plane Distance: 100
-      Image Rendering: background and overlay
-      Name: Left Camera
-      Overlay Alpha: 0.5
+      Name: MarkerArray
+      Namespaces:
+        {}
       Topic:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /left_camera/image_raw
+        Value: /occupied_cells_vis_array
       Value: true
-      Visibility:
-        Grid: true
-        Right Camera: true
-        RobotModel: true
-        Value: false
-      Zoom Factor: 1
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -205,7 +197,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 5.480223178863525
+      Distance: 34.50811767578125
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -220,10 +212,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5003976821899414
+      Pitch: 0.9753974676132202
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz_default_plugins)
-      Yaw: 1.6253974437713623
+      Yaw: 3.1203999519348145
     Saved:
       - Class: rviz_default_plugins/Orbit
         Distance: 5.480223178863525
@@ -250,12 +242,8 @@ Window Geometry:
     collapsed: false
   Height: 874
   Hide Left Dock: false
-  Hide Right Dock: false
-  Left Camera:
-    collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000015600000219fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005d00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c00610079007301000000ee00000219000000cc00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000219fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007301000000ee00000219000000a900fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b20000000000000000000000020000043e000000a9fc0100000003fb00000016004c006500660074002000430061006d0065007200610100000000000002340000008700fffffffb0000001800520069006700680074002000430061006d006500720061010000023a000002040000008f00fffffffb0000000a00560069006500770073030000004e00000080000002e100000197000000030000043e0000003efc0100000002fb0000000800540069006d006501000000000000043e0000026f00fffffffb0000000800540069006d00650100000000000004500000000000000000000001cd0000021900000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
-  Right Camera:
-    collapsed: false
+  Hide Right Dock: true
+  QMainWindow State: 000000ff00000000fd000000040000000000000156000002ccfc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d000002cc000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002ccfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d000002cc000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b20000000000000000000000020000043e000000a9fc0100000003fb00000016004c006500660074002000430061006d00650072006101000000000000043e0000000000000000fb0000001800520069006700680074002000430061006d006500720061010000023a000002040000000000000000fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000043e0000003efc0100000002fb0000000800540069006d006501000000000000043e0000026f00fffffffb0000000800540069006d00650100000000000004500000000000000000000002e2000002cc00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -263,7 +251,7 @@ Window Geometry:
   Tool Properties:
     collapsed: false
   Views:
-    collapsed: false
+    collapsed: true
   Width: 1086
-  X: 64
-  Y: 32
+  X: 71
+  Y: 52

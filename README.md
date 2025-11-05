@@ -3,19 +3,19 @@ Repository for [octomap tutorial](https://github.com/tejalbarnwal/octomap_tutori
 
 ---
 
-# Manual Way
+# Manual Way (Teleop control)
 
 First source the setup file: `cd ~/octomap_ws` `colcon build` `source install/setup.bash`
 
-To run use `ros2 launch my_robot_description main.launch.py mode:=teleop` and `ros2 launch octomap_server octomap_mapping.launch.xml`
+To run use `ros2 launch my_robot_description main.launch.py mode:=teleop` and `ros2 run octomap_server octomap_server_node --ros-args -p frame_id:=base_link -r cloud_in:=/lidar/points`
 
 
-To save the octomap use `ros2 run octomap_server octomap_saver_node --ros-args -p octomap_path:=(~/octomaps)`
+To save the octomap use `ros2 run octomap_server octomap_saver_node --ros-args -p octomap_path:= ~/octomaps`
 
 
 ---
 
-# Demo Way
+# Demo Way (Static Robot)
 
 First open the demo from the *ros_gz/ros_gz_sim_demos/* package: `ros2 launch ros_gz_sim_demos gpu_lidar_bridge.launch.py`
 

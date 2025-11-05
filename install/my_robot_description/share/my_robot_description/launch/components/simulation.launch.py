@@ -17,7 +17,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     world_file = LaunchConfiguration('world_file', default=os.path.join(pkg_dir, 'worlds', 'diff_drive', 'diff_drive.sdf'))
     use_gazebo_gui = LaunchConfiguration('use_gazebo_gui', default='true')
-    robot_name = LaunchConfiguration('robot_name', default='simple_robot')
+    robot_name = LaunchConfiguration('robot_name', default='my_robot')
     x_pos = LaunchConfiguration('x_pos', default='0.0')
     y_pos = LaunchConfiguration('y_pos', default='0.0')
     z_pos = LaunchConfiguration('z_pos', default='0.1')
@@ -44,7 +44,7 @@ def generate_launch_description():
 
     declare_robot_name = DeclareLaunchArgument(
         'robot_name',
-        default_value='simple_robot',
+        default_value='my_robot',
         description='Name of the robot'
     )
 
@@ -114,6 +114,13 @@ def generate_launch_description():
         
     )
 
+    # Transform from the lidar base to robot base
+    static_tf = Node(
+        package="tf2_ros",
+        executable="static_transform_publisher",
+        name="lidar_static_tf",
+        arguments=["0", "0", "0.1","0", "0", "0","base_link","my_robot/base_link/gpu_lidar"]
+    )
 
     # Return the launch description
     return LaunchDescription([
@@ -127,5 +134,7 @@ def generate_launch_description():
         gazebo_process,
         gazebo_headless_process,
         spawn_entity,
-        ros_gz_bridge                               
+        ros_gz_bridge,
+        gz_ros2_bridge,
+        static_tf                         
     ])
